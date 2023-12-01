@@ -4,7 +4,7 @@ public class InputHandler
 {
 
     // store lines of strings in a 2d array
-    public static int[,] readInput(string input)
+    public static int[,] readInput2DArray(string input)
     {
         // Split the input into rows
         string[] rows = input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);

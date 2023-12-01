@@ -1,9 +1,10 @@
 namespace code;
 
-public class Calculator
+public class OutputHandler
 {
 
-    public static int sum (List<int> lowPoints)
+// sum all heights and add the count of low points
+    public static int sumCustomised (List<int> lowPoints)
     {
         int sum = 0;
         foreach (int lowPoint in lowPoints)
