@@ -4,7 +4,7 @@ namespace tests;
 public class OutputHandlerTest : code.OutputHandler
 {
     [TestMethod]
-    public void Test1()
+    public void OutputTest()
     {
         var lowPoints = new List<int> { 1, 2, 3 };
         int expected = 9;
