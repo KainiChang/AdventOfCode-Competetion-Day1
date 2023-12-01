@@ -33,4 +33,10 @@ public class InputHandler
         // }
         return heightMap;
     }
+    public static string[] ReadInputLines(string input)
+    {
+        // Split the input into rows
+        string[] rows = input.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        return rows;
+    }
 }
