@@ -3,55 +3,46 @@ namespace tests;
 [TestClass]
 public class ProcessorTest : code.Processor
 {
-    // [TestMethod]
-    // public void ProcessAStringTest1()
-    // {
-    //     string input = "1abc2";
-    //     var expected = new List<int> { 1, 2 };
-    //     var actual = code.Processor.ProcessAString(input);
 
-    //     CollectionAssert.AreEqual(expected, actual);
-    // }
+    [TestMethod]
+    public void ReturnTheNumberTest()
+    {
+        string input = "1abc2";
+        var expected = 12;
+        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
 
+        Assert.AreEqual(expected, actual);
+    }
+    [TestMethod]
+    public void ReturnTheNumberTest2()
+    {
+        string input = "pqr3stu8vwx";
+        var expected = 38;
+        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
 
-    // [TestMethod]
-    // public void ReturnTheNumberTest()
-    // {
-    //     string input = "1abc2";
-    //     var expected = 12;
-    //     var actual = code.Processor.ReturnTheNumber(code.Processor.ProcessAString(input));
+        Assert.AreEqual(expected, actual);
+    }
 
-    //     Assert.AreEqual(expected, actual);
-    // }
-    // [TestMethod]
-    // public void ReturnTheNumberTest2()
-    // {
-    //     string input = "pqr3stu8vwx";
-    //     var expected = 38;
-    //     var actual = code.Processor.ReturnTheNumber(code.Processor.ProcessAString(input));
+    [TestMethod]
+    public void ReturnTheNumberTest3()
+    {
+        string input = "a1b2c3d4e5f";
+        var expected = 15;
+        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
 
-    //     Assert.AreEqual(expected, actual);
-    // }
+        Assert.AreEqual(expected, actual);
+    }
 
-    // [TestMethod]
-    // public void ReturnTheNumberTest3()
-    // {
-    //     string input = "a1b2c3d4e5f";
-    //     var expected = 15;
-    //     var actual = code.Processor.ReturnTheNumber(code.Processor.ProcessAString(input));
+    [TestMethod]
+    public void ReturnTheNumberTest4()
+    {
+        string input = "treb7uchet";
+        var expected = 77;
+        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
 
-    //     Assert.AreEqual(expected, actual);
-    // }
+        Assert.AreEqual(expected, actual);
+    }
 
-    // [TestMethod]
-    // public void ReturnTheNumberTest4()
-    // {
-    //     string input = "treb7uchet";
-    //     var expected = 77;
-    //     var actual = code.Processor.ReturnTheNumber(code.Processor.ProcessAString(input));
-
-    //     Assert.AreEqual(expected, actual);
-    // }
     [TestMethod]
     public void ReturnTheNumberTest5()
     {
