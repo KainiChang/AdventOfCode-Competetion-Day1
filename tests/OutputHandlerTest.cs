@@ -8,7 +8,7 @@ public class OutputHandlerTest : code.OutputHandler
     {
         var lowPoints = new List<int> { 1, 2, 3 };
         int expected = 9;
-        int actual = code.OutputHandler.sumCustomised(lowPoints);
+        int actual = code.OutputHandler.SumCustomised(lowPoints);
     Assert.AreEqual(expected, actual);
     }
 
