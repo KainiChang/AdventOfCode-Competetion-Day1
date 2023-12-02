@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace code;
 
-public class Processor
+public class Processor2
 {
     public static long Process(string[] input)
     {

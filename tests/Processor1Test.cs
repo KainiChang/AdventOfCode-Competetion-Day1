@@ -1,7 +1,7 @@
 namespace tests;
 
 [TestClass]
-public class ProcessorTest : code.Processor
+public class Processor1Test : code.Processor1
 {
 
     [TestMethod]
@@ -9,7 +9,7 @@ public class ProcessorTest : code.Processor
     {
         string input = "1abc2";
         var expected = 12;
-        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
+        var actual = code.Processor1.ReturnTheNumber(code.Processor1.GetFirstNumber(input),code.Processor1.GetLastNumber(input));
 
         Assert.AreEqual(expected, actual);
     }
@@ -18,7 +18,7 @@ public class ProcessorTest : code.Processor
     {
         string input = "pqr3stu8vwx";
         var expected = 38;
-        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
+        var actual = code.Processor1.ReturnTheNumber(code.Processor1.GetFirstNumber(input),code.Processor1.GetLastNumber(input));
 
         Assert.AreEqual(expected, actual);
     }
@@ -28,7 +28,7 @@ public class ProcessorTest : code.Processor
     {
         string input = "a1b2c3d4e5f";
         var expected = 15;
-        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
+        var actual = code.Processor1.ReturnTheNumber(code.Processor1.GetFirstNumber(input),code.Processor1.GetLastNumber(input));
 
         Assert.AreEqual(expected, actual);
     }
@@ -38,51 +38,25 @@ public class ProcessorTest : code.Processor
     {
         string input = "treb7uchet";
         var expected = 77;
-        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
+        var actual = code.Processor1.ReturnTheNumber(code.Processor1.GetFirstNumber(input),code.Processor1.GetLastNumber(input));
 
         Assert.AreEqual(expected, actual);
     }
 
-    [TestMethod]
-    public void ReturnTheNumberTest5()
-    {
-        string input = "1eightjsqbvpcfsevenvdkhbxzfournine5pttjffj";
-        var expected = 15;
-        var actual = code.Processor.ReturnTheNumber(code.Processor.GetFirstNumber(input),code.Processor.GetLastNumber(input));
-
-        Assert.AreEqual(expected, actual);
-    }
 
     [TestMethod]
     public void ProcessStringsTest()
     {
-        string input = @"two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen";
-        var expected = 281;
+        string input = @"1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet";
+        var expected = 142;
 
-        var actual = code.Processor.Process(code.InputHandler.ReadInputLines(input));
+        var actual = code.Processor1.Process(code.InputHandler.ReadInputLines(input));
 
         Assert.AreEqual(expected, actual);
     }
-
-        [TestMethod]
-    public void ProcessStringsTest2()
-    {
-        string input = @"2threeight";
-        var expected = 28;
-
-        var actual = code.Processor.Process(code.InputHandler.ReadInputLines(input));
-
-        Assert.AreEqual(expected, actual);
-    }
-
-
-
 
     [TestMethod]
     public void IntegrationTest()
@@ -1087,22 +1061,11 @@ nineeighttworhtvxdtxp8twoneh
 four3threeonehbfhttgn39sqpctngqmzkhttn
 rphtbkncs4nznsix
 6three2sixsix9eightfour";
-        var expected = 281;
+        var expected = 142;
 
-        var actual = code.Processor.Process(code.InputHandler.ReadInputLines(input));
+        var actual = code.Processor1.Process(code.InputHandler.ReadInputLines(input));
 
         Assert.AreEqual(expected, actual);
     }
 
-    // [TestMethod]
-    // public void IntegrationTest()
-    // {
-    //     string input = @"111
-    //     101
-    //     111";
-    //     int expected = 1;
-    //     var result = code.Processor.Process(code.InputHandler.ReadInput2DArray(input));
-    //     int actual = code.OutputHandler.SumCustomised(result);
-    //     Assert.AreEqual(expected, actual);
-    // }
 }
