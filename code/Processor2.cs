@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace code;
@@ -43,14 +40,15 @@ public class Processor2
         string pattern = @"(one|two|three|four|five|six|seven|eight|nine)|\d";
 
         // Find first match from the left
-        Match firstMatch = Regex.Matches(input, pattern).FirstOrDefault();
+        Match? firstMatch = Regex.Matches(input, pattern).FirstOrDefault();
         // Console.WriteLine(firstMatch);
 
         string result = "";
 
         if (firstMatch != null)
         {
-            result += numberWords.TryGetValue(firstMatch.Value, out string digit) ? digit : firstMatch.Value;
+            string matchedDigit = numberWords.TryGetValue(firstMatch.Value, out string? digit) ? digit : firstMatch.Value;
+            result = result + matchedDigit;
         }
         // Console.WriteLine(result);
         return result;
@@ -75,7 +73,7 @@ public class Processor2
 
         // Find first match from the right by reversing the string
         string reversedInput = new string(input.Reverse().ToArray());
-        Match lastMatchReversed = Regex.Matches(reversedInput, pattern).FirstOrDefault();
+        Match? lastMatchReversed = Regex.Matches(reversedInput, pattern).FirstOrDefault();
         // Console.WriteLine(lastMatchReversed);
 
         string result = "";
@@ -83,7 +81,8 @@ public class Processor2
         if (lastMatchReversed != null)
         {
             string reversedMatchValue = new string(lastMatchReversed.Value.Reverse().ToArray());
-            result += numberWords.TryGetValue(reversedMatchValue, out string digit) ? digit : reversedMatchValue;
+            string matchedDigit = numberWords.TryGetValue(reversedMatchValue, out string? digit) ? digit : reversedMatchValue;
+            result = result + matchedDigit;
         }
         // Console.WriteLine(result);
         return result;
