@@ -54,7 +54,7 @@ public class Processor2Test : code.Processor2
     }
 
     [TestMethod]
-    public void ProcessStringsTest()
+    public void ProcessStringsTest1()
     {
         string input = @"two1nine
 eightwothree
@@ -85,7 +85,7 @@ zoneight234
 
 
     [TestMethod]
-    public void IntegrationTest()
+    public void GetQuestion2AnswerTest()
     {
         string input = @"shrzvdcghblt21
 sixdddkcqjdnzzrgfourxjtwosevenhg9

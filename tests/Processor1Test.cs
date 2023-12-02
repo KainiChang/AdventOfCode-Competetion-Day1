@@ -59,7 +59,7 @@ treb7uchet";
     }
 
     [TestMethod]
-    public void IntegrationTest()
+    public void GetQuestion1AnswerTest()
     {
         string input = @"shrzvdcghblt21
 sixdddkcqjdnzzrgfourxjtwosevenhg9
